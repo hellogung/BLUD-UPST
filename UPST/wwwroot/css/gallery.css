@@ -1,0 +1,95 @@
+﻿.masonry {
+    columns: 4;
+}
+
+.masonry .box {
+    position: relative;
+    margin-bottom: 1.3em;
+    overflow: hidden;
+    border-radius: 0.7em;
+}
+
+    .masonry .box img {
+        transition: all 300ms ease;
+    }
+
+    .masonry .box:hover img {
+        cursor: pointer;
+        filter: brightness(0.4)!important;
+        transform: scale(1.1);
+    }
+
+    .masonry .box:hover p {
+        transition: all 700ms ease;
+        opacity: 1;
+        font-weight: 900;
+    }
+
+    .masonry .box p {
+        position: absolute;
+        bottom: 0px;
+        left: 5px;
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        opacity: 0;
+    }
+
+.rounded-lg {
+    border-radius: 15px;
+}
+
+body.modal-open main,
+body.modal-open nav
+{
+    overflow: hidden;
+    transition: all 300ms ease;
+    filter: blur(10px);
+}
+
+@media only screen and (max-width: 1200px) {
+    .masonry {
+        columns: 3;
+    }
+}
+
+/* Large */
+@media only screen and (max-width: 992px) {
+    .masonry {
+        columns: 2;
+    }
+
+        .masonry .box p {
+            position: static;
+            color: inherit;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 1;
+        }
+
+        .masonry .box img {
+            border-radius: 0.7em;
+        }
+
+        .masonry .box:hover img {
+            transform: scale(1);
+        }
+}
+
+/* Medium */
+@media only screen and (max-width: 768px) {
+    .masonry {
+        columns: 2;
+    }
+}
+
+/* Medium */
+@media only screen and (max-width: 567px) {
+    .masonry {
+        columns: 1;
+    }
+
+        .masonry .box p {
+            font-size: 1.2rem;
+        }
+}

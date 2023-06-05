@@ -1,0 +1,32 @@
+﻿aside {
+    position: absolute;
+    left: -4em;
+    top: 45vh;
+}
+
+#share {
+    position: sticky;
+    top: 50px;
+    gap: 1.5em
+}
+
+    #share a svg{
+        width: 32px;
+        height: 32px;
+    }
+
+    #share a,
+    #share button {
+        transition: transform 300ms ease;
+    }
+
+        #share a:hover,
+        #share button:hover {
+            transform: scale(1.2)
+        }
+
+        @media only screen and (max-width: 992px) {
+            aside {
+        position: static;
+    }
+}

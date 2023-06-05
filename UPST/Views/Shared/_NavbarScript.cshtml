@@ -1,0 +1,11 @@
+﻿document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        const togglerNav = document.getElementById("toggler-nav");
+        togglerNav.addEventListener("click", () => {
+            if (togglerNav.ariaExpanded === "false") {
+                document.querySelector("#toggler-nav img").src = "/assets/svg/list.svg";
+            } else {
+                document.querySelector("#toggler-nav img").src = "/assets/svg/x.svg";
+            }
+        });
+

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Data - ITF";
+    ViewBag.Menu = "Pengelolaan Sampah";
+    ViewBag.SubMenu = "ITF";
+    ViewBag.SubMenuNd = "ITFData";
+}
+
+<main class="container w-blog pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <!-- Isi Content-->
+                <p class="text-center">😔 Konten belum diperbarui...</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+@section scripts{
+    <script>
+
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+    </script>
+}

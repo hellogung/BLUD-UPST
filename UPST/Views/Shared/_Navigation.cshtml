@@ -1,0 +1,131 @@
+﻿<nav class="navbar bg-white bg-opacity-75 backdrop-blur navbar-expand-lg position-fixed w-100 shadow-none border-bottom border-2 border-light-subtle">
+    <div class="container">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+            <img src="~/assets/img/logo-upst.png"
+                 alt="Logo UPST"
+                 width="auto"
+                 height="45" />
+        </a>
+
+        <button id="toggler-nav"
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <img src="~/assets/svg/list.svg" alt="Menu Toggler" />
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav gap-2 ms-auto mb-2 mb-lg-0 fw-semibold nav-text-white px-2 py-3 py-md-0">
+                <li class='nav-item'>
+                    <a class="nav-link @(ViewBag.Menu == "Beranda" ? "d-none" : "")" asp-controller="Home" asp-action="Index">Beranda</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class='nav-link dropdown-toggle @(ViewBag.Menu == "Profil" ? "active" : "")' href="#">
+                        Profil
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="nav-link dropdown-item @(ViewBag.SubMenu == "Tentang Kami" ? "active" : "")" asp-controller="Profile" asp-action="Index">Tentang Kami</a>
+                        </li>
+                        <li>
+                            <a class='nav-link dropdown-item @(ViewBag.SubMenu == "Struktur Organisasi UPST" ? "active" : "")' asp-controller="Profile" asp-action="StrukturOrganisasi">Struktur Organisasi</a>
+                        </li>
+
+                        <li>
+                            <a class='nav-link dropdown-item @(ViewBag.SubMenu == "Galeri" ? "active" : "")' asp-controller="Profile" asp-action="Galeri">Galeri</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class='nav-link dropdown-toggle @(ViewBag.Menu == "Pengelolaan Sampah" ? "active" : "")' href="#">Pengelolaan Sampah</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class='nav-link dropdown-item dropdown-toggle @(ViewBag.SubMenu == "TPST Bantargebang" ? "active" : "")' href="#">TPST Bantargebang</a>
+                            <ul class="dropdown-menu">
+                                <li><a class='nav-link dropdown-item @(ViewBag.SubMenuNd == "TPSTRingkasan" ? "active" : "")' asp-controller="PengelolaanSampah" asp-action="TPSTRingkasan">Ringkasan</a></li>
+                                <li><a class='nav-link dropdown-item @(ViewBag.SubMenuNd == "TPSTData" ? "active" : "")' asp-controller="PengelolaanSampah" asp-action="TPSTData">Data</a></li>
+                                <li><a class='nav-link dropdown-item @(ViewBag.SubMenuNd == "TPSTLandfill" ? "active" : "")' asp-controller="PengelolaanSampah" asp-action="TPSTLandfill">Landfill</a></li>
+                                <li><a class='nav-link dropdown-item @(ViewBag.SubMenuNd == "TPSTPLTSa" ? "active" : "")' asp-controller="PengelolaanSampah" asp-action="TPSTPLTSA">PLTSa</a></li>
+                                <li><a class='nav-link dropdown-item @(ViewBag.SubMenuNd == "TPSTFAQ" ? "active" : "")' asp-controller="PengelolaanSampah" asp-action="TPSTFAQ">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-item dropdown-toggle @(ViewBag.SubMenu == "Pengelolaan Sampah Kawasan" ? "active" : "")" href="#">Pengelolaan Sampah Kawasan</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "PKMRingkasan" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="PKMRingkasan">Ringkasan</a></li>
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "PKMData" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="PKMData">Data</a></li>
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "PKMFAQ" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="PKMFAQ">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-item dropdown-toggle @(ViewBag.SubMenu == "ITF" ? "active" : "")" href="#">ITF</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "ITFRingkasan" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="ITFRingkasan">Ringkasan</a></li>
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "ITFData" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="ITFData">Data</a></li>
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "ITFFAQ" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="ITFFAQ">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-link dropdown-item dropdown-toggle @(ViewBag.SubMenu == "JRC" ? "active" : "")">JRC</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "JRCRingkasan" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="JRCRingkasan">Ringkasan</a></li>
+                                <li><a class="nav-link dropdown-item @(ViewBag.SubMenuNd == "JRCMekanisme" ? "active" : "")" asp-controller="PengelolaanSampah" asp-action="JRCMekanisme">Mekanisme</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li>
+                            <a class="nav-link dropdown-item dropdown-toggle" href="#">Lainnya</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link dropdown-item" href="#">Ringkasan</a></li>
+                                <li><a class="nav-link dropdown-item" href="#">Mekanisme</a></li>
+                                <li><a class="nav-link dropdown-item" href="#">FAQ</a></li>
+                                <li><a class="nav-link dropdown-item" href="#">Mekanisme</a></li>
+                                <li>
+                                    <a class="nav-link dropdown-item dropdown-toggle" href="#">Contoh Sub-Menu</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="nav-link dropdown-item" href="#">Nested Sub Menu 1</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link dropdown-item" href="#">Nested Sub Menu 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        -->
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link @(ViewBag.Menu == "Produk Hukum" ? "active" : "")" asp-controller="ProdukHukum" asp-action="Index">Produk Hukum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewBag.Menu == "Artikel" ? "active" : "")" asp-controller="Articles" asp-action="Index">Artikel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewBag.Menu == "Kontak" ? "active" : "")" asp-controller="Kontak" asp-action="Index">Kontak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary rounded-pill px-4 text-white"
+                       href="https://pesapakawan.dinaslhdki.id/login">
+                        Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const dropdownToggle = document.querySelectorAll(".dropdown-toggle")
+    dropdownToggle.forEach(dropdown => {
+        dropdown.addEventListener('click', function () {
+            this.nextElementSibling.classList.toggle("show")
+        })
+    })
+</script>

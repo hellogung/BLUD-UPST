@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Intermediate Treatment Facility";
+    ViewBag.Menu = "Pengelolaan Sampah";
+    ViewBag.SubMenu = "ITF";
+    ViewBag.SubMenuNd = "ITFRingkasan";
+}
+
+<main class="container w-blog pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <p>Pemerintah Provinsi DKI Jakarta melalui Dinas Kebersihan Provinsi DKI Jakarta berupaya untuk menangani permasalahan sampah tersebut dengan membangun alternatif fasilitas pengolahan sampah di dalam kota. Fasilitas pengolahan sebagaimana dimaksud yaitu Pembangkit Listrik Tenaga Sampah atau Intermediate Treatment Facility (ITF). Sesuai dengan Masterplan Pengelolaan Sampah Provinsi DKI Jakarta tahun 2012-2032, fasilitas tersebut akan dibangun di 4 (empat) lokasi berbeda di DKI Jakarta, antara lain di Sunter, Marunda, Cakung, dan Duri Kosambi, sehingga apabila fasilitas ini dibangun, maka akan dapat mengurangi ketergantungan dengan TPST Bantargebang.</p>
+                <p>Pembangunan PLTSa/ITF ini bertujuan untuk mereduksi sampah sebanyak 80- 90% dari kapasitas total jumlah sampah pada setiap fasilitas PLTSa/ITF (Kementerian ESDM RI, 2015). Pengolahan sampah tersebut melalui perubahan bentuk, komposisi, dan volume sampah dengan menggunakan teknologi pengolahan sampah tepat guna dan ramah lingkungan yang memenuhi persyaratan teknis, finansial, dan sosial. Klasifikasi teknologi yang akan dibangun dan dioperasikan tersebut terbagi ke dalam 4 (empat) jenis yaitu dengan menggunakan Teknologi Incinerator, Gasifikasi, Pyrolisis, dan Refuse Derived Fuel (RDF).</p>
+
+                <h3 class="mt-4">Identifikasi Jasa Pengelolaan Sampah</h3>
+                <ol type="1">
+                    <li>Menggunakan Teknologi Pengolahan Sampah Modern</li>
+                    <li>Membutuhkan ketersediaan lahan untuk pembangunan fasilitas pengolahan sampah</li>
+                    <li>Memerlukan waktu untuk pembangunan Fasilitas Pengolahan Sampah kurang lebih 3 tahun</li>
+                    <li>Investasi Jangka Panjang bagi pemberi Layanan sehingga membutuhkan kontrak selama 20 tahun</li>
+                    <li>Adanya korelasi antara hasil pengolahan sampah menjadi listrik sebagai faktor pengurang biaya Jasa Pengolahan Sampah</li>
+                </ol>
+
+
+                <h3 class="mt-4">Kebutuhan Dinas Lingkungan Hidup Atas Jasa Pengolahan Sampah</h3>
+                <ol type="1">
+                    <li>Merupakan kebutuhan wajib bagi pemerintahan daerah dalam pengolahan sampah</li>
+                    <li>Pengelolaan sampah saat ini masih menggunakan sanitary landfill dan cenderung open dumping</li>
+                    <li>Untuk mengurangi ketergantungan pengelolaan sampah di wilayah lain (Bekasi)</li>
+                    <li>Keterbatasan Lahan yang dimiliki oleh Pemprov DKI</li>
+                    <li>Jumlah sampah perhari mencapai 6.600 Ton perhari dengan pertumbuhan lebih kurang 500 ton perhari setiap tahunnya</li>
+                </ol>
+
+
+                <h3 class="mt-4">Peluang Dinas Lingkungan Hidup Atas Jasa Pengolahan Sampah</h3>
+                <ol type="1">
+                    <li>Adanya banyak calon penyedia jasa pengolahan sampah yang berminat (hasil market sounding)</li>
+                    <li>Beberapa calon penyedia jasa yang berminat memiliki lahan di Provinsi DKI Jakarta</li>
+                    <li>Dinas Kebersihan DKI Jakarta tidak memerlukan biaya investasi pembangunan fasilitas pengolahan sampah</li>
+                    <li>Dinas Kebersihan DKI Jakarta mendapatkan manfaat pengolahan sampah didalam kota sendiri</li>
+                    <li>Penghematan biaya transportasi, Operasional (BBM, pelumas), perawatan, termasuk biaya suku cadang kendaraan angkut sampah</li>
+                    <li>Mendapatkan beberapa penyedia Jasa Pengolahan sampah sehingga tidak memiliki ketergantungan terhadap satu penyedia saja</li>
+                </ol>
+
+                <img data-lazy="/assets/img/pengolah-sampah/itf/itf-alur-proses.jpg" class="lazy w-100 mt-3 rounded-lg" alt="ITF Alur Proses" />
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+@section scripts{
+    <script>
+
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+    </script>
+}

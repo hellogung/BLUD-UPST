@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Jakarta Recycle Center (JRC)";
+    ViewBag.Menu = "Pengelolaan Sampah";
+    ViewBag.SubMenu = "JRC";
+    ViewBag.SubMenuNd = "JRCRingkasan";
+}
+
+
+<main class="pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="container w-blog content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <p><img data-lazy="/assets/img/pengolah-sampah/jrc/jrc.jpg" alt="JRC" class="lazy w-50 responsive rounded-lg float-start mb-4" style="margin-right: 15px" />Kondisi TPST Bantargebang sudah hampir mencapai batas maksimum, sampah yang dibuang ke TPST Bantargebang masih dalam keadaan tercampur sehingga jumlah sampah yang masuk mencapai 7.700 ton per hari. Sehingga Gubernur Provinsi DKI Jakarta menetapkan Kegiatan Strategis Daerah (KSD) salah satunya berupa pengurangan sampah di sumber. Pemerintah Provinsi DKI Jakarta bersama dengan Kota Osaki, Jepang, menyelenggarakan program Jakarta Recycle Center (JRC) sebagai salah satu kegiatan dalam KSD pengurangan sampah di sumber.</p>
+                <p>Jakarta Recycle Center (JRC) adalah sistem pengelolaan sampah dengan mengedepankan pemilahan sampah dari sumbernya. Kegiatan ini merupakan suatu inovasi terhadap pengelolaan sampah dengan melibatkan berbagai macam stakeholder untuk menumbuhkan budaya pemilahan sampah bagi setiap warganya. Pilot project JRC ini dilakukan secara bertahap, dimulai di Kecamatan Pesanggrahan, Jakarta Selatan dengan target jumlah penduduk mencapai kurang lebih 250.000 jiwa, fokus program ini adalah dengan melakukan pemilahan sampah dari kawasan rumah tangga dan pengangkutan sampah secara terjadwal. Dinas Lingkungan Hidup bersama Walikota Jakarta Selatan, Camat, dan Lurah yang ada di Kecamatan Pesanggrahan secara aktif melakukan sosialisasi kepada warga. Sosialisasi ditujukan kepada pengurus RT, pengurus RW, pengurus kawasan, lembaga masyarakat, Ibu Rumah Tangga dan Asisten Rumah Tangga.</p>
+                <p>Saat ini program JRC sudah dilakukan di 2 kawasan perumahan dengan jumlah penduduk mencapai 771 jiwa. Sampah yang sudah terpilah akan diangkut sesuai jadwal yang ditentukan dan telah disepakati oleh warga. Dilakukan pendampingan dan sosialisasi pada saat pengangkutan agar warga bisa langsung mempraktikkan pemilahan sampah. Sampah yang sudah diangkut kemudian dibawa ke TPS 3R Pesanggrahan untuk kemudian diproses lebih lanjut. Sampah anorganik dipilah sesuai jenisnya dan dibersihkan agar dapat menjadi bahan daur ulang yang layak. Sampah organik yang berupa sisa makanan, rumput dan daun akan diproses menjadi kompos. Peran aktif masyarakat dalam pemilahan sampah serta komunikasi antara pemerintah dengan masyarakat menjadi faktor penting dalam usaha pengurangan sampah dari sumber.</p>
+
+            </div>
+        </div>
+    </section>
+    <section class="container w-75 responsive">
+            <h3 class="text-center fs-1 fw-bold mb-5">Lokasi Jakarta Recycle Center (JRC)</h3>
+        <div class="row gx-5">
+            <div class="col-lg-6 col-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1402.1980603325064!2d106.75831923703772!3d-6.261750195441119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1c3d9ef39bb%3A0xe7cca4dec1f93ad5!2sJRC%20(Jakarta%20Recycle%20Center)!5e0!3m2!1sen!2sid!4v1678694124762!5m2!1sen!2sid" class="rounded-lg shadow" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-lg-6 col-12">
+                <h4 class="mt-4 mt-lg-0">Rencana Pengembangan JRC</h4>
+                <h5 class="fw-bold">Tahap 1</h5>
+                <ul>
+                    <li>Komplek Ozone</li>
+                    <li>Komplek Bukit Mas</li>
+                    <li>Komplek Pesanggrahan Mas</li>
+                    <li>Komplek IKPN</li>
+                    <li>Komplek Alfa Indah</li>
+                    <li>Apartemen Gateway</li>
+                </ul>
+                <p class="fw-bold">Jumlah	: ± 8.000 jiwa</p>
+
+                <h5 class="fw-bold">Tahap 2</h5>
+                <p class="fw-bold">Jumlah	: ± 100.000 jiwa</p>
+
+                <h5 class="fw-bold">Tahap 3</h5>
+                <p>Seluruh Kecamatan Pesanggarahan</p>
+                <p class="fw-bold">Jumlah	: ± 250.000 jiwa</p>
+
+            </div>
+
+            <div class="col-lg-12">
+                <table id="example" class="table table-striped" style="width:100%"></table>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+@section scripts{
+    <script>
+
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+    </script>
+}

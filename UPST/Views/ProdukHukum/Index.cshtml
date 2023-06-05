@@ -1,0 +1,232 @@
+﻿@{
+    ViewData["Title"] = "Produk Hukum";
+    ViewBag.Menu = "Produk Hukum";
+}
+
+<link href="~/css/produkHukum.css" rel="stylesheet" />
+
+<main class="container w-75 responsive pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div style="width: 40%" class="responsive mx-auto input-group mb-3 border border-3 rounded">
+                    <input id="cari"
+                           type="text"
+                           class="form-control ps-4 py-2 border-0 fs-5 text-muted"
+                           placeholder="Cari Produk Hukum..."
+                           onkeyup="Search((this.value).toLowerCase())" />
+                    <span class="input-group-text bg-transparent border-0 fs-5">🔍</span>
+                </div>
+
+                
+                <div class="tabs-search d-flex justify-content-center gap-2">
+                    <div class="badge badge-sm text-bg-primary"><i class="bi bi-search"></i> INGUB</div>
+                    <div class="badge badge-sm text-bg-success"><i class="bi bi-search"></i> KEPGUB</div>
+                    <div class="badge badge-sm text-bg-warning"><i class="bi bi-search"></i> PERDA</div>
+                    <div class="badge badge-sm text-bg-danger"><i class="bi bi-search"></i> PERGUB</div>
+                    <div class="badge badge-sm text-bg-info"><i class="bi bi-search"></i> SK KADIS</div>
+                    <div class="badge badge-sm text-bg-dark"><i class="bi bi-search"></i> SE </div>
+                </div>
+
+                <div class="w-100 mt-5">
+                    <div id="produk_hukum" class="w-75 responsive mx-auto d-flex flex-column gap-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section scripts {
+    <script>
+        window.addEventListener('load', () => {
+            renderProdukHukum()
+            tabsSearch()
+        })
+
+        let produkHukum = [
+            {
+                "file": "INGUB_8_2016.pdf",
+                "nomor": "INGUB Nomor 8 Tahun 2016",
+                "tentang": "Penerapan Pengelolaan Sampah Kawasan Secara Mandiri"
+            },
+            {
+                "file": "INGUB_160_2015.pdf",
+                "nomor": "INGUB Nomor 160 Tahun 2015",
+                "tentang": "Jadwal Pembuangan Sampah dari Sumber/Warga dan Jadwal Pengangkutan ke Tempat Pembuangan Sampah Terpadu Bantargebang"
+            },
+            {
+                "file": "KEPGUB_2438_2016.pdf",
+                "nomor": "KEPGUB Nomor 2438 Tahun 2016",
+                "tentang": "Penunjukan Stasiun Peralihan Antara Sunter Sebagai Lokasi Pembangunan Dan Pengoperasian Fasilitas Pengelola Sampah Di Dalam Kota/Intermediate Treatment Facility"
+            },
+            {
+                "file": "PERDA_1_2015.pdf",
+                "nomor": "PERDA Nomor 1 Tahun 2015",
+                "tentang": "Perubahan Atas Peraturan Daerah Nomor 3 Tahun 2012 Tentang Retribusi Daerah"
+            },
+            {
+                "file": "PERDA_3_2013.pdf",
+                "nomor": "PERDA Nomor 3 Tahun 2013",
+                "tentang": "Pengelolaan Sampah"
+            },
+            {
+                "file": "PERGUB_4_2017.pdf",
+                "nomor": "PERGUB Nomor 4 Tahun 2017",
+                "tentang": "Penyesuaian Tarif Retribusi Pelayanan Persampahan/Kebersihan"
+            },
+            {
+                "file": "PERGUB_11_2014.pdf",
+                "nomor": "PERGUB Nomor 11 Tahun 2014",
+                "tentang": "Tata Cara Penerimaan Pembayaran Retribusi Daerah Dengan Sistem Elektronik Retribusi"
+            },
+            {
+                "file": "PERGUB_50_2016.pdf",
+                "nomor": "PERGUB Nomor 50 Tahun 2016",
+                "tentang": "Pembangunan Dan Pengoperasian Fasilitas Pengelola Sampah Di Dalam Kota/Intermediate Treatment Facility"
+            },
+            {
+                "file": "PERGUB_76_2009.pdf",
+                "nomor": "PERGUB Nomor 76 Tahun 2009",
+                "tentang": "Pelaksanaan Pengelolaan Limbah Bahan Berbahaya Dan Beracun"
+            },
+            {
+                "file": "PERGUB_109_2013.pdf",
+                "nomor": "PERGUB Nomor 109 Tahun 2013",
+                "tentang": "Tata Cara Pelaksanaan Pemungutan Retribusi Daerah"
+            },
+            {
+                "file": "PERGUB_284_2016.pdf",
+                "nomor": "PERGUB Nomor 284 Tahun 2016",
+                "tentang": "Organisasi Dan Tata Kerja Dinas Lingkungan Hidup"
+            },
+            {
+                "file": "PERGUB_400_2016.pdf",
+                "nomor": "PERGUB Nomor 400 Tahun 2016",
+                "tentang": "Pembentukan, Organisasi Dan Tata Kerja Unit Pengelola Sampah Terpadu"
+            },
+            {
+                "file": "PERMEN_PU_3_PRT_M_2013.pdf",
+                "nomor": "PERMEN PU Nomor 03/PRT/M Tahun 2013",
+                "tentang": "Penyelenggaraan Prasarana Dan Sarana Persampahan Dalam Penanganan Sampah Rumah Tangga Dan Sampah Sejenis Sampah Rumah Tangga"
+            },
+            {
+                "file": "PERMEN_PU_21_PRT_M_2006.pdf",
+                "nomor": "PERMEN PU Nomor 21/PRT/M Tahun 2006",
+                "tentang": "Kebijakan Dan Strategi Nasional Pengembangan Sistem Pengelolaan Persampahan(KSNP - SPP)"
+            },
+            {
+                "file": "PERMENDAGRI_33_2010.pdf",
+                "nomor": "PERMENDAGRI Nomor 33 Tahun 2010",
+                "tentang": "Pedoman Pengelolaan Sampah"
+            },
+            {
+                "file": "PP_27_2012.pdf",
+                "nomor": "PP Nomor 27 Tahun 2012",
+                "tentang": "Izin Lingkungan"
+            },
+            {
+                "file": "PP_81_2012.pdf",
+                "nomor": "PP Nomor 81 Tahun 2012",
+                "tentang": "Pengelolaan Sampah Rumah Tangga Dan Sampah Sejenis Sampah Rumah Tangga"
+            },
+            {
+                "file": "SE_378_2015.pdf",
+                "nomor": "SE Nomor 378 Tahun 2015",
+                "tentang": "Tertib Administrasi Struk Penimbangan TPST Bantargebang"
+            },
+            {
+                "file": "SK_KADIS_117_2016.pdf",
+                "nomor": "SK KADIS Nomor 117 Tahun 2016",
+                "tentang": "Pelaksanaan Pengelolaan Sampah Pada Kawasan Secara Mandiri"
+            },
+            {
+                "file": "SK_KADIS_374_2017.pdf",
+                "nomor": "SK KADIS Nomor 374 Tahun 2017",
+                "tentang": "Persyaratan Teknis Izin Usaha Pengelolaan Sampah"
+            },
+            {
+                "file": "SK_KADIS_527_2016.pdf",
+                "nomor": "SK KADIS Nomor 527 Tahun 2016",
+                "tentang": "Pedoman Standarisasi Konversi Satuan Sampah dari Ton ke m<sup>3</sup> (dan sebaliknya)"
+            },
+            {
+                "file": "SNI_19_2454_2002.pdf",
+                "nomor": "SNI 19-2454-2002",
+                "tentang": "Tata Cara Teknik Operasional Pengelolaan Sampah Perkotaan"
+            },
+            {
+                "file": "SNI_3242_2008.pdf",
+                "nomor": "SNI 3242:2008",
+                "tentang": "Pengelolaan Sampah di Pemukiman"
+            },
+            {
+                "file": "UU_18_2008.pdf",
+                "nomor": "UU Nomor 18 Tahun 2008",
+                "tentang": "Pengelolaan Sampah"
+            },
+            {
+                "file": "UU_32_2009.pdf",
+                "nomor": "UU Nomor 32 Tahun 2009",
+                "tentang": "Perlindungan Dan Pengelolaan Lingkungan Hidup"
+            },
+        ]
+
+        function renderProdukHukum() {
+            let elements = ''
+            const path = 'assets/pdf/produk_hukum/'
+
+            produkHukum.forEach(hukum => {
+                elements += `
+                <div class="hover-icon d-flex align-items-start gap-1">
+                    <div class="text-break text-muted mb-0">
+                        <p class="ph mb-0">
+                                    <a href=${path}${hukum.file} class="badge bg-primary text-decoration-none" target="_blank">
+                                <img src="assets/img/pdf-icon.png" class="icon-pdf" width="18px" alt=${hukum.file} /> ${hukum.nomor}
+                            </a>
+                            - ${hukum.tentang}
+                        </p>
+                    </div>
+                </div>
+                                    `
+            })
+
+            document.querySelector("#produk_hukum").innerHTML = elements
+
+        }
+
+        // Search Feature
+        function Search(item) {
+            let collections = document.querySelectorAll("#produk_hukum .ph");
+            for (i = 0; i < collections.length; i++) {
+                if (collections[i].innerHTML.toLowerCase().indexOf(item) > -1) {
+                    collections[i].parentElement.parentElement.classList.remove("d-none");
+                } else {
+                    collections[i].parentElement.parentElement.classList.add("d-none");
+                }
+            }
+        }
+
+
+        function tabsSearch () {
+            const tabs = document.querySelectorAll(".tabs-search .badge")
+            const cari = document.getElementById("cari")
+
+
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", (e) => {
+                    const hasilCari = e.target.textContent
+                    cari.value = hasilCari.trim()
+                    Search(hasilCari.toLowerCase())
+                })
+            })
+        }
+
+
+
+    </script>
+}
+

@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Tentang Kami";
+    ViewBag.Menu = "Profil";
+    ViewBag.SubMenu = "Tentang Kami";
+}
+
+<main class="container w-blog pb-5" style="padding: 120px 0">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <p>Unit Pengelola Sampah Terpadu merupakan Unit Pelaksana Teknis Dinas Lingkungan Hidup dalam pelaksanaan pengolahan sampah terpadu. Unit Pengelola Sampah Terpadu dipimpin oleh seorang Kepala Unit yang dalam melaksanakan tugas dan fungsinya berada di bawah dan bertanggung jawab kepada Kepala Dinas.</p>
+                <p>Unit Pengelola Sampah Terpadu mempunyai tugas melaksanakan pengelolaan sampah terpadu, dengan menyelenggarakan fungsi, antara lain:</p>
+                <ol type="a">
+                    <li>Penyusunan pedoman, standar dan prosedur teknis Unit Pengelola Sampah Terpadu</li>
+                    <li>Pengaturan dan pelaksanaan kegiatan di Pengolahan Sampah Terpadu</li>
+                    <li>Pengaturan dan pelaksanaan kegiatan pengangkutan sampah dari tempat pengolahan sampah terpadu menengah ke tempat pemrosesan akhir</li>
+                    <li>Pengaturan dan pelaksanaan kegiatan sistem monitoring pengolahan sampah terpadu dengan sistem informasi dan teknologi informasi</li>
+                    <li>Pelaksanaan penyediaan prasarana dan sarana kerja teknis kebersihan sebagai pendukung pelaksanaan pengelolaan dan/ atau pengolahan sampah terpadu dan pengelolaan kawasan mandiri</li>
+                    <li>Pelaksanaan penggunaan prasarana dan sarana kerja teknis kebersihan untuk pengelolaan dan/atau pengolahan sampah terpadu dan pengelolaan kawasan mandiri</li>
+                    <li>Pengelolaan dan/atau pengelolaan pengolahan sampah terpadu dengan menggunakan teknologi yang ramah lingkungan</li>
+                    <li>Pelaksanaan koordinasi dan kerjasama dengan SKPD/UKPD dan instansi terkait dalam rangka pelaksanaan pengelolaan dan/atau pengolahan sampah terpadu dan pengelolaan kawasan mandiri</li>
+                    <li>Pelaksanaan koordinasi pengawasan dan pengendalian pengelolaan dan/atau pengolahan sampah terpadu dan pengelolaan kawasan mandiri dengan SKPD /UKPD dan instansi terkait</li>
+                    <li>Pelaksanaan kegiatan monitoring dan evaluasi pengelolaan dan/atau pengolahan sampah terpadu dan pengelolaan kawasan mandiri dan instansi pemerintah dan/atau swasta</li>
+                    <li>Pelaksanaan pemeliharaan dan perawatan prasarana dan sarana kerja teknis kebersihan</li>
+                    <li>Pelaksanaan publikasi kegiatan dan pengaturan acara Unit Pengelola Sampah Terpadu</li>
+                    <li>Penerimaan, pemungutan, penatausahaan, penyetoran, pelaporan dan pertanggungjawaban retribusi sampah pada area pengelolaan dan/atau pengolahan sampah terpadu dan area pengelolaan kawasan mandiri</li>
+
+                </ol>
+                <p>Unit Pengelola Sampah Terpadu Dinas Lingkungan Hidup, mempunyai kegiatan strategis berupa:</p>
+                <ol type="a">
+                    <li>Pengelolaan TPST Bantargebang</li>
+                    <li>Pengelolaan sampah pada kawasan secara mandiri</li>
+                    <li>Rencana Pengelolaan Intermediate Treatment Facilities (ITF)</li>
+                </ol>
+                <div class="w-75 responsive mx-auto">
+                    <iframe class="rounded-lg shadow w-100 mt-5" height="310" src="https://www.youtube.com/embed/rHrBYUHc8T0" title="UPST Dinas Lingkungan Hidup" frameborder="0" allow="accelerometer; autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="rounded-lg shadow w-100 mt-5" height="310" src="https://www.youtube.com/embed/1FWBfs1g2ec" title="GREEN TPST Bantar Gebang Bekasi" frameborder="0" allow="accelerometer; autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+@section scripts{
+    <script>
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+    </script>
+}

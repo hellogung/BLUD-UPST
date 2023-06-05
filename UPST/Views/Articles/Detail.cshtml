@@ -1,0 +1,270 @@
+﻿@{
+    ViewData["Title"] = "Detail Artikel";
+    ViewData["URL"] = Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path + Context.Request.QueryString;
+    ViewData["Hashtag"] = "upst,dlh,tutorial";
+}
+
+@section style {
+    <link href="~/css/detailArticle.css" rel="stylesheet" />
+}
+
+
+<!-- <div class="progressBar position-fixed top-0" style="transition: 150ms ease width;
+        height: 5px;
+        width: 0%;
+        background-color: red;
+        border-radius: 0 1em 1em 0;"></div>
+-->
+       
+
+<main class="container w-blog pb-5">
+    <section class="position-relative min-vh-100 px-2 px-lg-3" style="padding-top: 120px">
+        <!-- Breadcrumb of Content -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb flex-nowrap align-content-start">
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-dark fw-semibold text-decoration-none">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-dark fw-semibold text-decoration-none">UPST</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-dark fw-semibold text-decoration-none">Blog</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-dark fw-semibold text-decoration-none">ITF</a>
+                </li>
+                <li class="breadcrumb-item active line-clamp-1" aria-current="page">
+                    Structure Your React Project Like a Senior Developer
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Title of Content -->
+        <h1 class="fw-bold mt-5">
+            @ViewData["Title"]
+        </h1>
+
+        <!-- Label and Date created -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb flex-nowrap align-content-start fw-semibold mt-4">
+                <li class="breadcrumb-item active">Admin</li>
+                <li class="breadcrumb-item active line-clamp-1" aria-current="page">
+                    06 Desember 2022
+                </li>
+            </ol>
+        </nav>
+
+
+
+        <!-- Image Content -->
+        <img src="~/assets/img/1.jpg"
+             class="rounded-4 thumbnail-fit mt-4 mb-5"
+             width="100%"
+             alt="" />
+
+
+
+        <!-- Content -->
+        <div class="content">
+            <p>
+                Pengen reimburse trip bisnis kamu ke kantor? Kamu bisa gunakan
+                Profil Bisnis, fitur baru dari Gojek. Dengan membuat fitur Profil
+                Bisnis, proses reimburse perjalanan bisnis di dalam aplikasi Gojek
+                ke kantor pastinya bakal jadi lebih gampang!
+            </p>
+            <p>
+                Gunakan fitur Profil Bisnis supaya kamu bisa memisahkan perjalanan
+                pribadi atau bisnis. Lihat semua riwayat perjalanan bisnis juga jadi
+                mudah karena kamu bisa langsung mengunduh laporan semua perjalanan
+                bisnis buat pelaporan aktivitas transportasi ke perusahaan kamu.
+            </p>
+            <p>
+                Fitur Profil bisnis hadir secara bertahap di Aplikasi Gojek pastikan
+                kamu telah mengupdate ke aplikasi Gojek terbaru.
+            </p>
+            <p>Dengan fitur Profil Bisnis kamu bisa:</p>
+            <ul>
+                <li>
+                    Pisahkan pengeluaran transportasi bisnis dari pengeluaran pribadi;
+                </li>
+                <li>
+                    Tandai perjalanan kamu sebagai perjalanan bisnis atau pribadi;
+                </li>
+                <li>
+                    Tetapkan frekuensi laporan riwayat perjalanan bisnis sehingga kamu
+                    bisa mendapatkan laporan terjadwal untuk mendukung proses
+                    reimburse ke perusahaan;
+                </li>
+                <li>
+                    Dapatkan laporan riwayat perjalanan bisnis berkala yang dikirim ke
+                    alamat email kantor kamu bersama dengan semua detail informasi
+                    perjalanan bisnis.
+                </li>
+            </ul>
+            <h2>Cara untuk membuat Profil Bisnis:</h2>
+            <p>
+                Setelah kamu registrasi melalui aplikasi Gojek pastikan kamu
+                melakukan verifikasi di email kantor kamu. Tenang aja, Gojek tidak
+                menggunakan email ini untuk kegiatan promosi dan hanya untuk
+                kebutuhan penerimaan laporan perjalanan.
+            </p>
+        </div>
+
+        <!-- Share Button -->
+        <aside class=" mt-5 mt-md-0">
+            <p class="fs-3 fw-bold text-muted d-lg-none d-block">Bagikan artikel ini</p>
+            <div id="share" class="d-flex flex-row flex-lg-column align-items-center">
+                <p class="mb-0 text-muted fw-semibold">Share:</p>
+                <a href="https://api.whatsapp.com/send?text=@ViewData["Title"] @ViewData["URL"]" target="_blank" id="icon-share-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#66D367" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                </a>
+                <a href="https://twitter.com/share?url=@ViewData["URL"]%0A&text=@ViewData["Title"]%0A%0A&hashtags=@ViewData["Hashtag"]" target="_blank" id="icon-share-twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#4F9CF0" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/sharer.php?u=@ViewData["URL"]" target="_blank" id="icon-share-facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#3C74E1" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg>
+                </a>
+                <!--
+                <a href="/" target="_blank" id="icon-share-messenger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 800 800">
+                        <radialGradient id="a" cx="101.9" cy="809" r="1.1" gradientTransform="matrix(800 0 0 -800 -81386 648000)" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#09f" /><stop offset=".6" style="stop-color:#a033ff" /><stop offset=".9" style="stop-color:#ff5280" /><stop offset="1" style="stop-color:#ff7061" /></radialGradient>
+                        <path fill="url(#a)" d="M400 0C174.7 0 0 165.1 0 388c0 116.6 47.8 217.4 125.6 287 6.5 5.8 10.5 14 10.7 22.8l2.2 71.2a32 32 0 0 0 44.9 28.3l79.4-35c6.7-3 14.3-3.5 21.4-1.6 36.5 10 75.3 15.4 115.8 15.4 225.3 0 400-165.1 400-388S625.3 0 400 0z" />
+                        <path fill="#FFF" d="m159.8 501.5 117.5-186.4a60 60 0 0 1 86.8-16l93.5 70.1a24 24 0 0 0 28.9-.1l126.2-95.8c16.8-12.8 38.8 7.4 27.6 25.3L522.7 484.9a60 60 0 0 1-86.8 16l-93.5-70.1a24 24 0 0 0-28.9.1l-126.2 95.8c-16.8 12.8-38.8-7.3-27.5-25.2z" />
+                    </svg>
+                </a>
+                -->
+                <a href="https://www.linkedin.com/shareArticle?url=@ViewData["URL"]&title=@ViewData["Title"]" target="_blank" id="icon-share-linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#3467C2" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                    </svg>
+                </a>
+                <button id="icon-share-clipboard" class="border-0 bg-transparent" data-bs-toggle="tooltip" data-bs-placement="left"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Copy URL">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#fff" class="bi bi-link-45deg p-1 bg-dark rounded-circle" viewBox="0 0 16 16">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                    </svg>
+                </button>
+                <div class="toast-container position-fixed p-3" style="top:10%; left: 50%; transform: translateX(-50%)">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1000">
+                        <div class="toast-header rounded fs-6">
+                            <strong class="me-auto">Tautan berhasil disalin</strong>
+                            <button type="button" class="btn-close" style="fill: #fff" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </section>
+</main>
+
+<!-- Latest Articles -->
+<section class="container px-4 mb-5 border-top border-2">
+    <h2 class="fw-bold mt-5">Artikel Terbaru</h2>
+
+    <div class="row mt-3">
+        <div class="col-md-4 py-4">
+            <img src="~/assets/img/4.jpg"
+                 class="rounded-4 thumbnail-fit"
+                 width="100%"
+                 height="250px"
+                 alt="" />
+            <div class="mt-3 px-3">
+                <a href="#" class="text-dark text-decoration-none">
+                    <h2 class="mb-1 fw-semibold fs-4 text-break line-clamp-2">
+                        New skills & imposter syndrome are the biggest challenges
+                        developers face
+                    </h2>
+                </a>
+                <span class="text-muted fs-6">
+                    <a href="#" class="text-muted">TPST Bantargebang</a>
+                    • 19 Des 2022
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4 py-4">
+            <img src="~/assets/img/1.jpg"
+                 class="rounded-4 thumbnail-fit"
+                 width="100%"
+                 height="250px"
+                 alt="" />
+            <div class="mt-3 px-3">
+                <a href="#" class="text-dark text-decoration-none">
+                    <h2 class="mb-1 fw-semibold fs-4 text-break line-clamp-2">
+                        New skills & imposter syndrome are the biggest challenges
+                        developers face
+                    </h2>
+                </a>
+                <span class="text-muted fs-6">
+                    <a href="#" class="text-muted">TPST Bantargebang</a>
+                    • 19 Des 2022
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4 py-4">
+            <img src="~/assets/img/2.jpg"
+                 class="rounded-4 thumbnail-fit"
+                 width="100%"
+                 height="250px"
+                 alt="" />
+            <div class="mt-3 px-3">
+                <a href="#" class="text-dark text-decoration-none">
+                    <h2 class="mb-1 fw-semibold fs-4 text-break line-clamp-2">
+                        New skills & imposter syndrome are the biggest challenges
+                        developers face
+                    </h2>
+                </a>
+                <span class="text-muted fs-6">
+                    <a href="#" class="text-muted">TPST Bantargebang</a>
+                    • 19 Des 2022
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+@section scripts{
+    <script src="~/js/clipboard.js" defer></script>
+    <script src="~/js/progress-scroll.js"></script>
+    <script>
+
+        const btnCopy = document.getElementById('icon-share-clipboard')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        window.onscroll = () => scrollProgress();
+
+        // Action for button clipboard
+        if (btnCopy) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            btnCopy.addEventListener('click', () => {
+                copyClipboard('@ViewData["URL"]')
+                toastBootstrap.show()
+            })
+        }
+
+
+        // Active scroll-progress
+        function scrollProgress(element) {
+            const winScroll =
+                document.body.scrollTop || document.documentElement.scrollTop;
+            const height =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const scrollBar = document.querySelector(".progressBar")
+            scrollBar.style.width = scrolled + "%";
+        }
+        
+    </script>
+}

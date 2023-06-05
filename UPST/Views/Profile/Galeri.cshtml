@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Galeri";
+    ViewBag.Menu = "Profil";
+    ViewBag.SubMenu = "Galeri";
+}
+
+@section style{
+    <link href="~/css/gallery.css" rel="stylesheet" />
+}
+
+
+<main class="pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+
+    <section id="gallery" class="container my-5">
+        <div class="container">
+            <div id="tab-filter"
+                 class="d-flex flex-wrap justify-content-center align-items-center gap-3 animate__animated">
+                <a href="#"
+                   class="btn btn-outline-primary active"
+                   onclick="Filter(this)">Semua</a>
+                <a href="#" class="btn btn-outline-primary" onclick="Filter(this)">TPST Bantargebang</a>
+                <a href="#" class="btn btn-outline-primary" onclick="Filter(this)">PSW</a>
+                <a href="#" class="btn btn-outline-primary" onclick="Filter(this)">ITF</a>
+                <a href="#" class="btn btn-outline-primary" onclick="Filter(this)">JRC</a>
+            </div>
+        </div>
+        <div class="container masonry mt-5">
+            <div class="box animate__animated animate__zoomIn" data-filter="tpst bantargebang" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/1.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Anak-anak sedang belajar
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="ITF" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/2.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Anak perempuan
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="JRC" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/3.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Pantai
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="tpst bantargebang itf" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/4.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Berdansa
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="PSW" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/5.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Grup Kelas Study Tour
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="jrc itf psw" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/6.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Particle
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="tpst bantargebang" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/7.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Danau Toba
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="psw itf tpst bantargebang" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/8.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Pohon Alien
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="psw jrc" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/9.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Grand Canon
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="jrc psw itf" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/10.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Puncak
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="tpst bantargebang" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/11.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Batang Bunga
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="jrc" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/12.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Kamar The Conjuring
+                </p>
+            </div>
+            <div class="box animate__animated animate__zoomIn" data-filter="tpst bantargebang jrc" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                <img class="lazy" data-lazy="/assets/img/13.jpg" width="100%" />
+                <p class="ps-2 mt-1 text-break line-clamp-1">
+                    Surving di Pangandaran
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<!-- Modal -->
+<div class="modal fade position-fixed" id="galleryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="d-flex flex-column w-100 px-4 px-md-0">
+            <img img="/assets/img/logo-upst.png" width="100%" class="rounded-lg" />
+            <p class="text-center text-light h2 mt-2 mt-md-3">Lorem Ipsum</p>
+        </div>
+
+    </div>
+    <!-- <button type="button" class="bg-warning btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+</div>
+
+
+
+
+
+@section scripts{
+    <script defer>
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+
+        // Filter Tab Feature
+        function Filter(item) {
+            let pictures = document.querySelectorAll(".masonry .box");
+            for (i = 0; i < pictures.length; i++) {
+                if (item.textContent.trim().toLowerCase() == "semua") {
+                    pictures[i].classList.remove("d-none");
+                    pictures[i].classList.remove("animate__zoomIn");
+                    pictures[i].classList.add("animate__zoomIn");
+                } else if (
+                    pictures[i].dataset.filter
+                        .toLowerCase()
+                        .indexOf(item.textContent.trim().toLowerCase()) > -1
+                ) {
+                    pictures[i].classList.remove("d-none");
+                    pictures[i].classList.remove("animate__zoomIn");
+                    pictures[i].classList.add("animate__zoomIn");
+                } else {
+                    pictures[i].classList.add("d-none");
+                    pictures[i].classList.remove("animate__zoomIn");
+                }
+            }
+
+            // Active Tab
+            const tabs = document.querySelectorAll("#tab-filter a");
+            tabs.forEach((tab) => {
+                tab.classList.remove("active");
+            });
+            item.classList.add("active");
+        }
+
+        // Lightbox: Change image source when modal open
+        const images = document.querySelectorAll(".box img");
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                document.querySelector(".modal-dialog img").src = image.src
+                document.querySelector(".modal-dialog p").textContent = image.nextElementSibling.textContent
+            })
+        })
+
+    </script>
+}

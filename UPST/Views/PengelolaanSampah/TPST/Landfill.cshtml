@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Landfill Mining - TPST Bantargebang";
+    ViewBag.Menu = "Pengelolaan Sampah";
+    ViewBag.SubMenu = "TPST Bantargebang";
+    ViewBag.SubMenuNd = "TPSTLandfill";
+}
+
+<main class="container w-blog pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <p>Salah satu metode pengolahan yang akan dilakukan sebagai langkah optimalisasi TPST Bantargebang adalah <b>Landfill Mining</b>. Hasil kajian terkait landfill mining di TPST Bantargebang, menunjukkan adanya potensi pelaksanaan landfill mining yang memberikan keuntungan dalam penyediaan lahan yang dapat dimanfaatkan kembali serta potensi pemanfaatan sampah hasil penambangan sampah tersebut.</p>
+                <p>
+                    <b>Landfill Mining</b> merupakan suatu pendekatan yang digunakan untuk pengembangan kapasitas TPST Bantargebang dalam memperluas atau menambah luas lahan TPST Bantargebang. <b>Landfill Mining</b> adalah penambangan lahan urug zona tidak aktif dengan karakteristik sampah yang sudah terdekomposisi agar bisa digunakan kembali sehingga memperpanjang masa pelayanan TPST bantargebang dengan harapan dapat difungsikan untuk tujuan lingkungan lainnya.
+                </p>
+                <h4 class="mt-5">Tujuan utama dari landfill mining adalah:</h4>
+                <ol type="1">
+                    <li>Konservasi ruang TPST Bantargebang;</li>
+                    <li>
+                        Pengurangan area TPA;
+                    </li>
+                    <li>
+                        Memperpanjang umur TPST Bantargebang;
+                    </li>
+                    <li>
+                        Penghapusan sumber kontaminasi potensial;
+                    </li>
+                    <li>
+                        Mitigasi sumber kontaminasi;
+                    </li>
+                    <li>
+                        Pemulihan energi;
+                    </li>
+                    <li>
+                        Daur ulang material;
+                    </li>
+                    <li>
+                        Pengurangan dalam sistem manajemen biaya; dan
+                    </li>
+                    <li>Pembangunan atau penggunaan kembali lahan.</li>
+                </ol>
+
+                <h4 class="mt-5">Produk Landfill Mining berupa:</h4>
+                <ol typeof="a">
+                    <li>Kompos, yang dapat digunakan untuk penghijauan area TPST Bantargebang</li>
+                    <li>Tanah/kompos, yang dapat digunakan sebagai cover soil</li>
+                    <li>Sampah anorganik, yang dapat dipilah lalu diproses menjadi Refused Derived Fuel (RDF), dimanfaatkan/daur ulang, atau diinsinerasi di PLTSa</li>
+                </ol>
+
+                <h4 class="mt-5">Gambaran umum Landfill Mining</h4>
+                <img data-lazy="/assets/img/pengolah-sampah/tpst/tpst-landfill.jpg" alt="Landfill Mining" class="lazy w-100 mt-3 rounded-lg" />
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+@section scripts{
+    <script>
+
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+    </script>
+}

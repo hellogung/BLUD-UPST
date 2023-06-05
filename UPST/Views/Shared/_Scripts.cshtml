@@ -1,0 +1,22 @@
+﻿<script src="~/vendor/bootstrap.bundle.min.js"></script>
+<script src="~/vendor/jquery-3.6.3.min.js"></script>
+<script src="~/js/imageLazyLoad.js"></script>
+<script>
+    // Script to the top
+    window.addEventListener("scroll", () => {
+        if (document.querySelector("#top")){
+            if (window.scrollY > 130) {
+                document.querySelector("#top").style.opacity = "1";
+                document.querySelector("#top").style.visibility = "visible";
+            } else {
+                document.querySelector("#top").style.opacity = "0";
+                document.querySelector("#top").style.visibility = "hidden";
+            }
+        }
+    });
+
+    @{
+            <partial name="_NavbarScript" />
+    }
+</script>
+   

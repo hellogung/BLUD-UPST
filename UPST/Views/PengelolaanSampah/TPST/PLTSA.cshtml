@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Pembangkit Listrik Tenaga Sampah (PLTSa)";
+    ViewBag.Menu = "Pengelolaan Sampah";
+    ViewBag.SubMenu = "TPST Bantargebang";
+    ViewBag.SubMenuNd = "TPSTPLTSa";
+}
+
+<main class="container w-blog pb-5" style="padding-top: 120px">
+    <section>
+        <h1 class="fw-bold text-center title-page">@ViewData["Title"]</h1>
+    </section>
+    <section class="content px-2 px-lg-3 py-5">
+        <div class="row justify-content-center">
+            <div class="col">
+                <img data-lazy="/assets/img/pengolah-sampah/tpst/tpst-MoU-BPPT.jpg" alt="Mou BPPT" class="lazy w-100 mb-4 rounded-lg" />
+                <p>Pilot project Pembangkit Listrik Tenaga Sampah (PLTSa) TPST Bantargebang dibangun pada tahun 2018 oleh Pusat Teknologi Lingkungan (PTL), Badan Pengkajian dan Penerapan Teknologi (BPPT) bekerjasama dengan Pemerintah Propinsi DKI Jakarta, berdasarkan MoU yang ditandatangani oleh Gubernur DKI Jakarta dengan Kepala Badan Pengkajian dan Penerapan Teknologi pada 20 Desember 2017, serta perjanjian kerjasama antara Kepala Dinas Lingkungan Hidup DKI Jakarta dengan Direktur Pusat Teknologi Lingkungan tahun 2018 dan tahun 2019 tentang pembangunan pilot project Pengolahan Sampah Proses Termal-PLTSa.</p>
+                <img data-lazy="/assets/img/pengolah-sampah/tpst/tpst-diagram-proses-PLTSa.jpg" alt="Diagram Proses PLTSa" class="lazy w-100 mb-4 rounded-lg" />
+                <p>Pilot project PLTSa menggunakan teknologi proses termal yang dapat memusnahkan sampah secara cepat, signifikan dan ramah lingkungan. Pilot project PLTSa didesain untuk beroperasi secara kontinyu 24 jam/hari dan 250-300 hari/tahun, menggunakan bahan bakar sampah dengan kapasitas 100 ton/hari dan menghasilkan listrik sebesar 700 kW yang akan digunakan untuk pengoperasian internal unit PLTSa. Pilot project ini akan digunakan menjadi sarana riset dan percontohan untuk penanganan sampah kota-kota besar. khususnya kota besar yang masuk dalam Perpres 35 tahun 2018 tentang Percepatan Pembangunan Infrastruktur Pengolahan Sampah menghasilkan energi listrik Berbasis teknologi Ramah Lingkungan. Salah satunya kota yang termasuk dalam Perpres ini adalah DKI Jakarta.</p>
+                <img data-lazy="/assets/img/pengolah-sampah/tpst/tpst-pilot-project-PLTSa.jpg" alt="Pliot Project PLTSa" class="lazy w-100 mb-4 rounded-lg" />
+                <p>Pilot project PLTSa selesai dibangun pada bulan Desember 2018, kemudian dilakukan testing peralatan dan penyempurnaan pada januari 2019. Pilot project PLTSa ini telah diresmikan pada tanggal 25 Maret 2019 oleh Menteri Koordinator Maritim, Menteri Riset Teknologi dan Pendidikan Tinggi, Gubernur Provinsi DKI Jakarta dan Kepala Badan Pengkajian dan Penerapan Teknologi serta dihadiri oleh beberapa Pejabat Daerah lainya.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+@section scripts{
+    <script>
+
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        // Navbar solid when scroll down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+    </script>
+}
