@@ -1,0 +1,521 @@
+﻿@{
+    ViewData["Title"] = "Produk";
+    ViewBag.Menu = "Produk";
+}
+
+@section style{
+    <link href="~/css/produk.css" rel="stylesheet" />
+}
+
+<main class="min-vh-100" style="padding: 120px 0">
+    <section class="container-fluid px-4 px-lg-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+                <h1 class="fw-bold text-lg-start text-center" style="font-size: 3rem">
+                    Produk
+                </h1>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="responsive w-100 mx-auto input-group mb-3 border rounded">
+                    <input id="cari"
+                           type="text"
+                           class="form-control ps-4 py-2 border-0 fs-5 text-muted"
+                           placeholder="Cari Produk..." />
+                    <span class="input-group-text bg-transparent d-block mx-auto border-0 fs-5" style="width: 50px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-3 gy-md-0 mt-4">
+            <div class="col-md-3 col-lg-2">
+                <div class="row bg-white shadow-sm rounded-4 p-3 gy-3 mt-0">
+                    <div class="col-12">
+                        <a class="fs-5 fw-semibold text-primary text-decoration-none bg-warning" data-bs-toggle="collapse" href="#filterCollapse" role="button" aria-expanded="false" aria-controls="filterCollapse">
+                            <div class="d-flex justify-content-between">
+                                Filter
+                                <span class="text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="collapse show mt-2" id="filterCollapse">
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter1">
+                                <label class="form-check-label" for="filter1">Filter 1</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter2">
+                                <label class="form-check-label" for="filter2">Filter 2</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter3">
+                                <label class="form-check-label" for="filter3">Filter 3</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter4">
+                                <label class="form-check-label" for="filter4">Filter 4</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter5">
+                                <label class="form-check-label" for="filter5">Filter 5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <a class="fs-5 fw-semibold text-primary text-decoration-none bg-warning" data-bs-toggle="collapse" href="#lokasiCollapse" role="button" aria-expanded="false" aria-controls="lokasiCollapse">
+                            <div class="d-flex justify-content-between">
+                                Lokasi
+                                <span class="text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                        <div class="collapse mt-2" id="lokasiCollapse">
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter1">
+                                <label class="form-check-label" for="filter1">Filter 1</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter2">
+                                <label class="form-check-label" for="filter2">Filter 2</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter3">
+                                <label class="form-check-label" for="filter3">Filter 3</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter4">
+                                <label class="form-check-label" for="filter4">Filter 4</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter5">
+                                <label class="form-check-label" for="filter5">Filter 5</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <a class="fs-5 fw-semibold text-primary text-decoration-none bg-warning" data-bs-toggle="collapse" href="#warnaCollapse" role="button" aria-expanded="false" aria-controls="warnaCollapse">
+                            <div class="d-flex justify-content-between">
+                                Warna
+                                <spanclass ="text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                    </svg>
+                                    </span>
+                            </div>
+                        </a>
+                        <div class="collapse mt-2" id="warnaCollapse">
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter1">
+                                <label class="form-check-label" for="filter1">Filter 1</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter2">
+                                <label class="form-check-label" for="filter2">Filter 2</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter3">
+                                <label class="form-check-label" for="filter3">Filter 3</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter4">
+                                <label class="form-check-label" for="filter4">Filter 4</label>
+                            </div>
+                            <div class="mb-1 form-check">
+                                <input type="checkbox" class="form-check-input" id="filter5">
+                                <label class="form-check-label" for="filter5">Filter 5</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-10 px-0 px-md-3">
+                <div class="bg-white shadow-sm rounded-4 p-3 p-md-4">
+                    <div id="produk-wrapper" class="row gy-4 gx-3 gx-md-4">
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Skeleton Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk placeholder-glow" style="border-radius: 15px" aria-hidden="true">
+                                <a href="#" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <span class="placeholder col-12" style="border-radius: 15px 15px 0 0"></span>
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <h3 class="placeholder col-12 text-dark mb-0 fs-7 fw-semibold line-clamp-2 mb-1"></h3>
+                                        <p class="placeholder col-7 fs-6 fw-bold mb-0" style="height: 15px"></p>
+                                        <!--<p class="fs-9 mb-2 text-body-tertiary fw-medium text-decoration-line-through">Rp2.150.000  <span class="badge text-bg-danger opacity-75 ms-1">15%</span></p>-->
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/verify.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="placeholder col-6 fw-medium text-muted"></span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img data-lazy="./assets/img/star.png"
+                                                 class="lazy thumbnail-fit"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="placeholder col-6 fw-medium text-muted ms-1"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card Produk: End -->
+                        <!-- Card Produk: Start -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card-produk" style="border-radius: 15px">
+                                <a href="${link}" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <img src="/assets/img/1.jpg"
+                                             class="thumbnail-fit"
+                                             style="border-radius: 15px 15px 0 0"
+                                             loading="lazy"
+                                             alt=${title} />
+                                    </div>
+                                    <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                        <h3 class="text-dark mb-0 fs-7 fw-semibold line-clamp-2">MSI Modern 14 C5M Ryzen 7 5825U AMD Radeon™ Graphics 14" FHD W11 - RAM 8GB</h3>
+                                        <p class="fs-6 fw-bold mb-0 text-price">Rp8.499.000</p>
+
+                                        <div class="mt-1 fs-9">
+                                            <img src="./assets/img/verify.png"
+                                                 class="thumbnail-fit"
+                                                 loading="lazy"
+                                                 alt="Produk 1" width="16px" height="16px" />
+                                            <span class="fw-medium text-muted">Jakarta Timur</span>
+                                        </div>
+                                        <div class="mt-1 fs-9">
+                                            <img src="./assets/img/star.png"
+                                                 class="thumbnail-fit"
+                                                 loading="lazy"
+                                                 alt="Produk 1" width="14px" height="14px" />
+                                            <span class="fw-medium text-muted ms-1">4.5 | Terjual 1rb</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Card Produk: End -->
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-end">
+                                    <li class="page-item disabled">
+                                        <a class="page-link">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+
+
+@section scripts{
+    <script>
+        // Navbar solid when scroll down
+        document.querySelector("nav").classList.add("bg-white");
+        document.querySelector("ul.navbar-nav").classList.remove("nav-text-white");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                document.querySelector("nav").classList.add("shadow");
+            } else {
+                document.querySelector("nav").classList.remove("shadow");
+            }
+        });
+
+
+        // Get Products
+        async function getProducts(querySearch) {
+
+            const url = `https://tokopediaapi.p.rapidapi.com/?act=search&query=${querySearch}`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'b77370dd24msh77a4ed1b3bc220cp1d6382jsn61b5d678b177',
+                    'X-RapidAPI-Host': 'tokopediaapi.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options).then(data => data.json()).then(data => data.results);
+                let cardProduk = ''
+                // const limitProduct = response.slice(0, 12)
+                response.forEach(produk => {
+                    const {image,link,location,price,rating,slug,sold,title} = produk
+
+                    cardProduk += `
+                            <!-- Card Produk: Start -->
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="card-produk" style="border-radius: 15px">
+                                        <a href="${link}" class="text-decoration-none">
+                                            <div class="ratio ratio-1x1">
+                                                <img src=${image}
+                                                     class="thumbnail-fit"
+                                                     style="border-radius: 15px 15px 0 0"
+                                                     loading="lazy"
+                                                     alt=${title} />
+                                            </div>
+                                            <div class="bg-white p-3 pt-2" style="border-radius: 0 0 15px 15px">
+                                                        <h3 class="text-dark mb-0 fs-7 fw-semibold line-clamp-2">${title}</h3>
+                                                <p class="fs-6 fw-bold mb-0 text-price">${price}</p>
+                                                
+                                                <div class="mt-1 fs-9">
+                                                    <img src="./assets/img/verify.png"
+                                                         class="thumbnail-fit"
+                                                         loading="lazy"
+                                                         alt="Produk 1" width="16px" height="16px" />
+                                                    <span class="fw-medium text-muted">${location}</span>
+                                                </div>
+                                                <div class="mt-1 fs-9">
+                                                    <img src="./assets/img/star.png"
+                                                         class="thumbnail-fit"
+                                                         loading="lazy"
+                                                         alt="Produk 1" width="14px" height="14px" />
+                                                                    <span class="fw-medium text-muted ms-1">${rating} | Terjual ${sold}</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Card Produk: End -->
+                    `
+                })
+
+                const produkWrapper = document.querySelector("#produk-wrapper")
+                produkWrapper.innerHTML = cardProduk
+   
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        getProducts('Macbook Pro')
+    </script>
+}

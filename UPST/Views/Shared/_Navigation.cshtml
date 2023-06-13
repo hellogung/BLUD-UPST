@@ -102,6 +102,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link @(ViewBag.Menu == "Produk" ? "active" : "")" asp-controller="Produk" asp-action="Index">Produk</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link @(ViewBag.Menu == "Produk Hukum" ? "active" : "")" asp-controller="ProdukHukum" asp-action="Index">Produk Hukum</a>
                 </li>
                 <li class="nav-item">
